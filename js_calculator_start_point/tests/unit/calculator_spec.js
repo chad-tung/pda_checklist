@@ -44,12 +44,13 @@ describe('calculator', function () {
     calculator.operatorClick('*');
     assert.strictEqual(calculator.newTotal, true);
     calculator.numberClick(6);
+    calculator.numberClick(4);
     assert.strictEqual(calculator.newTotal, false);
     calculator.operatorClick('=')
     assert.strictEqual(calculator.newTotal, true);
   });
 
-  it('should concatenate number clicks for runningTotal if no operators have been clicked', function() {
+  it('should concatenate numberClicks for runningTotal if no operators have been clicked', function() {
     calculator.numberClick(9);
     calculator.numberClick(9);
     assert.strictEqual(calculator.runningTotal, 99);
